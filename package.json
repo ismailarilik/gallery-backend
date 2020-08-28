@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "cross-env DEBUG=softtech-gallery-backend:* node ./bin/www"
+    "start": "cross-env DEBUG=softtech-gallery-backend:* nodemon ./bin/www"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
@@ -12,6 +12,7 @@
     "morgan": "~1.9.1"
   },
   "devDependencies": {
-    "cross-env": "^7.0.2"
+    "cross-env": "^7.0.2",
+    "nodemon": "^2.0.4"
   }
 }
