@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "cross-env DEBUG=softtech-gallery-backend:* nodemon ./bin/www"
+    "start": "cross-env DEBUG=softtech-gallery-backend:* nodemon ./bin/www",
+    "test": "npm run lint",
+    "lint": "standard"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
@@ -13,6 +15,7 @@
   },
   "devDependencies": {
     "cross-env": "^7.0.2",
-    "nodemon": "^2.0.4"
+    "nodemon": "^2.0.4",
+    "standard": "^14.3.4"
   }
 }
