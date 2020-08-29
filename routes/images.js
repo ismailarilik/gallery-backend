@@ -18,10 +18,11 @@ router.get('/', (req, res) => {
   fs.readdir(directoryPath, function (err, files) {
     //handling error
     if (err) {
-        return console.log('Unable to scan directory: ' + err);
-    }
+      res.status(500).send(`Unable to scan directory: ${err}`)
+    } else {
     const filesSent = files.map(file => `images/${file}`)
     res.json(filesSent)
+    }
   });
 });
 
