@@ -13,7 +13,7 @@ const directoryPath = path.join(__dirname, '..', 'public', 'images')
 
 // POST to /images to upload images
 router.post('/', upload.single('file'), (req, res) => {
-  res.json({ files: req.files })
+  res.json(req.file)
 })
 
 // GET to /images to get an array of images
@@ -24,9 +24,8 @@ router.get('/', (req, res) => {
       console.log(`Unable to scan directory: ${err}`)
       res.status(500).send(`Unable to scan directory: ${err}`)
     } else {
-      // Sent image relative paths
-      const filesSent = files.map(file => `images/${file}`)
-      res.json(filesSent)
+      // Sent image names
+      res.json(files)
     }
   })
 })
