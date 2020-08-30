@@ -17,7 +17,7 @@ router.post('/', upload.single('file'), (req, res) => {
 })
 
 // GET to /images to get an array of images
-router.get('/', (req, res) => {
+router.get('/', (_, res) => {
   fs.readdir(directoryPath, function (err, files) {
     // Handle errors
     if (err) {
